@@ -7,5 +7,5 @@
     inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { self, nixpkgs, haskellNix, fenix }: {};
+  outputs = { ... }: {};
 }
