@@ -1,12 +1,16 @@
 {
   # Pin these
-  inputs.nixpkgs.url = "nixpkgs/e12483116b3b51a185a33a272bf351e357ba9a99";
-  inputs.haskellNix.url = "github:input-output-hk/haskell.nix/a9aa3790f542c023c198d01e31bdfecf4ea6e95a";
+  inputs.nixpkgs.url = "nixpkgs/f5c27c6136db4d76c30e533c20517df6864c46ee";
+  inputs.haskellNix.url = "github:input-output-hk/haskell.nix/1aaffd26caf84fa48d884177f283321f193daede";
 
   inputs.fenix = {
     url = "github:nix-community/fenix";
     inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { ... }: {};
+  outputs = { nixpkgs, haskellNix, fenix, ... }: {
+    inherit nixpkgs;
+    inherit fenix;
+    inherit haskellNix;
+  };
 }
